@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christian Ingking - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    
+
+    <section class="about">
+    <h2>About Me</h2>
+        <div class="intro">
+        <div class="intro-text">
+            <h1>Hello!<br> I'm <br> Christian <br> Ingking <span>→</span></h1>
+        </div>
+        <div class="intro-photo">
+            <img src="me1.jpg" alt="Christian Ingking" id="profilePic" style="cursor:pointer;">
+        </div>
+        </div>
+    </section>
+
+    <section class="description">
+        <p>
+        I'm a third-year BSIT student at Bohol Island State University's Balilihan Campus 
+        who is constantly eager to learn new things and has a strong interest for technology. 
+        Enjoys interacting with others, participating in sports, and being active. 
+        Presently concentrated on developing future-useful experiences and honing coding 
+        and development skills.
+        </p>
+    </section>
+
+    <section class="projects">
+    <h2>My Sample Project</h2>
+        <div class="project-images">
+            <img src="m1.JPEG" alt="Sample project 1" class="projectPic" style="cursor:pointer;">
+            <img src="m2.JPEG" alt="Sample project 2" class="projectPic" style="cursor:pointer;">
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>Contact</h2>
+        <ul>
+            <li>
+                📧 
+                <a href="mailto:christian_jay.ingking@bisu.edu.ph">
+                    christian_jay.ingking@bisu.edu.ph
+                </a>
+            </li>
+            <li>
+                📍 
+                <a href="https://maps.google.com/?q=West+Poblacion,+Alburquerque,+Bohol" target="_blank">
+                    West Poblacion, Alburquerque, Bohol
+                </a>
+            </li>
+            <li>
+                📱 
+                <a href="tel:09691948358">
+                    09691948358
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <div id="imgModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="hdImg">
+    </div>
+
+    </div>
+
+    <script>
+    const modal = document.getElementById("imgModal");
+    const img = document.getElementById("profilePic");
+    const modalImg = document.getElementById("hdImg");
+    const closeBtn = document.getElementsByClassName("close")[0];
+
+    img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = "me1.jpg";
+        modalImg.alt = img.alt;
+    }
+
+    const projectPics = document.querySelectorAll('.projectPic');
+    projectPics.forEach(function(pic) {
+        pic.onclick = function() {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            modalImg.alt = this.alt;
+        }
+    });
+
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+</body>
+</html>
